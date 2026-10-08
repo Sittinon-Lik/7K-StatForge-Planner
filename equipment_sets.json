@@ -1,29 +1,56 @@
-{
-  "Vanguard": {
-    "ATK%": 45,
-    "Effect Hit": 20
+[
+  {
+    "SetName": "Vanguard",
+    "BonusStats": {
+      "ATK%": 0.45,
+      "Effect Hit": 0.2
+    }
   },
-  "Bounty Tracker": {
-    "Weakness": 35
+  {
+    "SetName": "Bounty Tracker",
+    "BonusStats": {
+      "Weakness": 0.35
+    }
   },
-  "Paladin": {
-    "HP%": 40
+  {
+    "SetName": "Paladin",
+    "BonusStats": {
+      "HP%": 0.4
+    }
   },
-  "Gatekeeper": {
-    "Block": 30
+  {
+    "SetName": "Gatekeeper",
+    "BonusStats": {
+      "Block": 0.3
+    }
   },
-  "Guardian": {
-    "DEF%": 45,
-    "Effect RES": 20
+  {
+    "SetName": "Guardian",
+    "BonusStats": {
+      "DEF%": 0.45,
+      "Effect RES": 0.2
+    }
   },
-  "Assassin": {
-    "Crit": 30
+  {
+    "SetName": "Assassin",
+    "BonusStats": {
+      "Crit Rate": 10.0
+    }
   },
-  "Avenger": {},
-  "Spellweaver": {
-    "Effect Hit": 35
+  {
+    "SetName": "Avenger",
+    "BonusStats": {}
   },
-  "Orchestrator": {
-    "Effect RES": 35
+  {
+    "SetName": "Spellweaver",
+    "BonusStats": {
+      "Effect Hit": 0.35
+    }
+  },
+  {
+    "SetName": "Orchestrator",
+    "BonusStats": {
+      "Effect RES": 0.35
+    }
   }
-}
+]

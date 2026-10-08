@@ -2,7 +2,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Rudy(ลูดี้)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "832.00",
     "ATK%": "12.00%",
     "Base DEF": "1,034.00",
@@ -21,7 +21,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Eileene(ไอลีน)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,457.00",
     "ATK%": "48.00%",
     "Base DEF": "728.00",
@@ -40,7 +40,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Rachel(ราเชล)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -59,7 +59,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Spike(สไปค์)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "12.00%",
     "Base DEF": "659.00",
@@ -78,7 +78,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Jave(เจฟ)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -97,7 +97,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Kris(คริส)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -116,7 +116,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Vanessa(วาเนสซา)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -135,7 +135,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Fai(ไพร์) C0",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "0.00%",
     "Base DEF": "571.00",
@@ -154,7 +154,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Fai(ไพร์) C12",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -173,7 +173,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Rosie(โรซี่)C0",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "0.00%",
     "Base DEF": "675.00",
@@ -192,7 +192,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Rosie(โรซี่)C12",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -211,7 +211,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Juri(จูริ)C0",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "0.00%",
     "Base DEF": "571.00",
@@ -230,7 +230,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Juri(จูริ)C12",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -249,7 +249,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Melia(มิเลีย)C0",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,580.00",
     "ATK%": "0.00%",
     "Base DEF": "1,580.00",
@@ -268,7 +268,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Melia(มิเลีย)C12",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,580.00",
     "ATK%": "48.00%",
     "Base DEF": "1,580.00",
@@ -287,7 +287,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Gelidus(เกลลิดัส)C0",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "0.00%",
     "Base DEF": "659.00",
@@ -306,7 +306,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Gelidus(เกลลิดัส)C12",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "12.00%",
     "Base DEF": "659.00",
@@ -325,7 +325,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Mercure(เมลคีร์)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -344,7 +344,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Colt(โคลท์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -363,7 +363,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Platin(เพลตัน)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -382,7 +382,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Branze & Bransel(บรันซ์ & บรันเซล)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -401,7 +401,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Pallanus(พาลานอส)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -420,7 +420,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Dellons(เดลโลนส์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -439,7 +439,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Ace(เอซ)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -458,7 +458,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Rin(ริน)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -477,7 +477,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Sun Wukong(ซุนหงอคง)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -496,7 +496,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Lu Bu(ลิโป้)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -515,7 +515,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Teo(แทโอ)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -534,7 +534,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Yeonhee(ยอนฮี)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -553,7 +553,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Karma(คาร์ม่า)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "12.00%",
     "Base DEF": "659.00",
@@ -572,7 +572,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Kyle(ไคล์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -591,7 +591,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Taka(ทากะ)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -610,7 +610,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Orly(ออร์ลี่)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -629,7 +629,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Aquila(อากีลา)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "727.00",
     "ATK%": "12.00%",
     "Base DEF": "892.00",
@@ -648,7 +648,7 @@
   {
     "Rank": "ทองบน",
     "Name": "O'Mok(โอม๊ก)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -667,7 +667,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Karl Heron(คาร์ล เฮรอน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -686,7 +686,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Kyrielle(คิริเอล)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -705,7 +705,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Elysia(เอลิเซีย)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -724,7 +724,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Ryan(ไรอัน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -743,7 +743,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Klahan(พยัคฆ์เมฆา)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -762,7 +762,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Kagura(คางุระ)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -781,7 +781,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Miho(มิโฮะ)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -800,7 +800,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Amelia(เอมิเลีย)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -819,7 +819,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Yoongun(ยุนกอน)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -838,7 +838,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Trude(ธรูด)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -857,7 +857,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Freyja(เฟรยา)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -876,7 +876,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Radgrid(แร็ดกริด)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "727.00",
     "ATK%": "12.00%",
     "Base DEF": "892.00",
@@ -895,7 +895,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Reginleif(เรกินเลฟ)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -914,7 +914,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Randgrid(แรนด์กริด)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -933,7 +933,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Mist(มิสต์)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -952,7 +952,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Skuld(สกัลด์)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -971,7 +971,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Silvesta(ซิลเวสตา)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -990,7 +990,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Clemyth(เคลมิส)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,253.00",
     "ATK%": "12.00%",
     "Base DEF": "774.00",
@@ -1009,7 +1009,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Orkah(ออร์ก้า)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -1028,7 +1028,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Aris(อาริส)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,457.00",
     "ATK%": "48.00%",
     "Base DEF": "728.00",
@@ -1047,7 +1047,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Sunran(ซอรัน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -1066,7 +1066,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Hayeon(ฮายอน)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,253.00",
     "ATK%": "12.00%",
     "Base DEF": "774.00",
@@ -1085,7 +1085,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Evan(อีวาน)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "704.00",
     "ATK%": "12.00%",
     "Base DEF": "818.00",
@@ -1104,7 +1104,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Karin(คาริน)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1123,7 +1123,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Yuri(ยูริ)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1142,7 +1142,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Li(ลี)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "704.00",
     "ATK%": "12.00%",
     "Base DEF": "818.00",
@@ -1161,7 +1161,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Yui(ยูอิ)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1180,7 +1180,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Ariel(เอเรียล)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1199,7 +1199,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Jupy(จูพี้)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1218,7 +1218,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Snipper(สนิปเปอร์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1237,7 +1237,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Hellenia(เฮเลเนีย)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "774.00",
     "ATK%": "12.00%",
     "Base DEF": "930.00",
@@ -1256,7 +1256,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Heavenia(เฮฟเว่นเนีย)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,569.00",
     "ATK%": "39.00%",
     "Base DEF": "595.00",
@@ -1275,7 +1275,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Karon(คารอน)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1294,7 +1294,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Victoria(วิคตอเรีย)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,238.00",
     "ATK%": "12.00%",
     "Base DEF": "616.00",
@@ -1313,7 +1313,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Lucy(ลูซี่)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1332,7 +1332,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Velika(เบลลีก้า)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -1351,7 +1351,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Sylvia(ซิลเวีย)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1370,7 +1370,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Joker(โจ๊กเกอร์)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1389,7 +1389,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Xiao(เสี่ยว)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1408,7 +1408,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Rook(ลุค)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "727.00",
     "ATK%": "12.00%",
     "Base DEF": "892.00",
@@ -1427,7 +1427,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Chancellor(ซานซะเลอร์)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "12.00%",
     "Base DEF": "659.00",
@@ -1446,7 +1446,7 @@
   {
     "Rank": "ม่วง",
     "Name": "May(เมย์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1465,7 +1465,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Alice(อลิซ)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -1484,7 +1484,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Aragon(อารากอน)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "727.00",
     "ATK%": "12.00%",
     "Base DEF": "892.00",
@@ -1503,7 +1503,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Noho(โนโฮ)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1522,7 +1522,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Chloe(โคลอี้)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1541,7 +1541,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Biscuit(บิสกิต)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -1560,7 +1560,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Deo(แทอู๊ด)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1579,7 +1579,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Ruri(ลูลี่)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1598,7 +1598,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Nia(เนีย)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -1617,7 +1617,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Espada(เอสปาด้า)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1636,7 +1636,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Shane(เซอิน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1655,7 +1655,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Sieg(ซีค)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -1674,7 +1674,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Jane(เจน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1693,7 +1693,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Black Rose(แบล็คโรส)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1712,7 +1712,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Sera(เซร่า)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1731,7 +1731,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Ballista(บาลิสต้า)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1750,7 +1750,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Hokin(โฮกิ้น)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1769,7 +1769,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Rahkun(แรคคูน)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "704.00",
     "ATK%": "12.00%",
     "Base DEF": "818.00",
@@ -1788,7 +1788,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Leo(ลีโอ)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1807,7 +1807,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Bane(เบน)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1826,7 +1826,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Cleo(คลีโอ)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1845,7 +1845,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Lania(ลาเนีย)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,238.00",
     "ATK%": "39.00%",
     "Base DEF": "616.00",
@@ -1864,7 +1864,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Sarah(ซาร่า)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -1883,7 +1883,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Knox(น็อกซ์)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "832.00",
     "ATK%": "12.00%",
     "Base DEF": "1,034.00",
@@ -1902,7 +1902,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Lina(รีน่า)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -1921,7 +1921,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Catty(แคทตี้)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1940,7 +1940,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Jin(จิน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1959,7 +1959,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Rei(เรย์)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -1978,7 +1978,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Daisy(เดซี่)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -1997,7 +1997,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Soi(โซอี)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -2016,7 +2016,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Feng Yan(เฟิงเยี่ยน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -2035,7 +2035,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Ling Ling(หลิงหลิง)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -2054,7 +2054,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Bai Long(ไป่หลง)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2073,7 +2073,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Yu Shin(ยูชิน)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2092,7 +2092,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Bi Dam(พีดัม)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2111,7 +2111,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Bai Jiao(ไป๋เจียว)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -2130,7 +2130,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Xiao Qiao(เสี่ยวเฉีนว)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2149,7 +2149,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Nezha(นาจา)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2168,7 +2168,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Asura(อสุรา)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,238.00",
     "ATK%": "39.00%",
     "Base DEF": "616.00",
@@ -2187,7 +2187,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Pascal(ปาสคาล)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2206,7 +2206,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Zhao Yun(จูล่ง)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,389.00",
     "ATK%": "39.00%",
     "Base DEF": "533.00",
@@ -2225,7 +2225,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Diaochan(เตียวเสี้ยน)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,095.00",
     "ATK%": "12.00%",
     "Base DEF": "675.00",
@@ -2244,7 +2244,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Guan Yu(กวนอู)",
-    "ธาตุ": "Universal",
+    "Element": "Universal",
     "Base ATK": "1,306.00",
     "ATK%": "48.00%",
     "Base DEF": "659.00",
@@ -2263,7 +2263,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Dongyoung(โดยอง)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -2282,7 +2282,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Sung Jinwoo(ซองจินอู)",
-    "ธาตุ": "Magic",
+    "Element": "Magic",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2301,7 +2301,7 @@
   {
     "Rank": "ทองล่าง",
     "Name": "Cha Hae-In(ชาแฮอิน)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,500.00",
     "ATK%": "48.00%",
     "Base DEF": "571.00",
@@ -2320,7 +2320,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Lee Joohee(อีจูฮี)",
-    "ธาตุ": "Support",
+    "Element": "Support",
     "Base ATK": "1,035.00",
     "ATK%": "12.00%",
     "Base DEF": "632.00",
@@ -2339,7 +2339,7 @@
   {
     "Rank": "ม่วง",
     "Name": "Yoo Jinho(ยูจินโฮ)",
-    "ธาตุ": "Defense",
+    "Element": "Defense",
     "Base ATK": "704.00",
     "ATK%": "12.00%",
     "Base DEF": "818.00",
@@ -2358,7 +2358,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Zenitsu Agatsuma(เซนิทซึ)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
@@ -2377,7 +2377,7 @@
   {
     "Rank": "ทองบน",
     "Name": "Tanjiro Kamado(ทันจิโร่)",
-    "ธาตุ": "Attack",
+    "Element": "Attack",
     "Base ATK": "1,712.00",
     "ATK%": "48.00%",
     "Base DEF": "668.00",
