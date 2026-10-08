@@ -1,0 +1,29 @@
+{
+  "Vanguard": {
+    "ATK%": 45,
+    "Effect Hit": 20
+  },
+  "Bounty Tracker": {
+    "Weakness": 35
+  },
+  "Paladin": {
+    "HP%": 40
+  },
+  "Gatekeeper": {
+    "Block": 30
+  },
+  "Guardian": {
+    "DEF%": 45,
+    "Effect RES": 20
+  },
+  "Assassin": {
+    "Crit": 30
+  },
+  "Avenger": {},
+  "Spellweaver": {
+    "Effect Hit": 35
+  },
+  "Orchestrator": {
+    "Effect RES": 35
+  }
+}

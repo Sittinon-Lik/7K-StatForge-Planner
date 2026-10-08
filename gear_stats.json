@@ -1,0 +1,19 @@
+{
+  "อาวุธ": {
+    "Weakness": 28,
+    "Crit": 24,
+    "Crit DMG": 36,
+    "ATK%": 28,
+    "DEF%": 28,
+    "HP%": 28
+  },
+  "เกราะ": {
+    "Effect Hit": 28,
+    "DMG Red": 16,
+    "Block": 24,
+    "ATK%": 28,
+    "DEF%": 28,
+    "HP%": 28,
+    "Effect RES": 30
+  }
+}
