@@ -34,7 +34,7 @@
   {
     "SetName": "Assassin",
     "BonusStats": {
-      "Crit Rate": 10.0
+      "Crit Rate": 0.3
     }
   },
   {

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Character Stat Upgrade Planner (Streamlit)
+Character Stat Upgrade Planner (Streamlit - Fast & Optimized Version)
 รันด้วย: streamlit run app.py
 """
 import itertools
@@ -43,7 +43,7 @@ BUFF_CHOICES = {
 AUTO_SET = "อัตโนมัติ (ให้ระบบจัดหาเซตที่ดีที่สุด)"
 AUTO_MAIN = "อัตโนมัติ (ให้ระบบจัดการ)"
 WEAPON, ARMOR = "อาวุธ", "เกราะ"
-LEVELS = range(6)  # +0 .. +5
+LEVELS = range(6)
 
 
 def canon(name: str) -> str:
@@ -73,7 +73,7 @@ def find_file(name: str) -> Path:
         p = d / name
         if p.exists():
             return p
-    raise FileNotFoundError(f"ไม่พบไฟล์ {name} (ค้นหาใน {', '.join(map(str, DATA_DIRS))})")
+    raise FileNotFoundError(f"ไม่พบไฟล์ {name}")
 
 
 def read_json(name: str):
@@ -144,7 +144,6 @@ def compute_totals(acc: np.ndarray, base: dict, stats: list) -> np.ndarray:
         if s in FLAT_STATS:
             out.append(base[s] * (1 + acc[..., KIDX[s + "%"]] / 100.0) + acc[..., KIDX[s]])
         else:
-            # ใช้ base.get(s, 0.0) เพื่อถ้าเป็นสเตตัส % (เช่น ATK%) หรือไม่มีใน base ให้คืนค่าเป็น 0.0 ไม่เด้ง Error
             base_val = base.get(s, 0.0)
             out.append(base_val + acc[..., KIDX[s]])
     return np.stack(out, axis=-1)
@@ -167,11 +166,10 @@ def build_fixed(char, set_bonus, mains, buffs) -> np.ndarray:
 
 
 # ─────────────────────────────────────────────────────────────
-# 3) Calculation Engine
+# 3) Fast Search Engine (Fast Pruning + Optimization)
 # ─────────────────────────────────────────────────────────────
-def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, priority, subs, set_name, piece_user_subs):
+def search_piece_substats(F, base, target_list, cand_keys, mains, priority, subs, set_name, piece_user_subs):
     max_level_per_stat = 3 if priority == "minsum" else 5
-    
     ordered_stats = [t['stat'] for t in target_list]
     target_dict = {t['stat']: t['value'] for t in target_list}
 
@@ -179,9 +177,7 @@ def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, 
     fixed_levels = []
 
     for p in range(4):
-        p_main = mains[p][0]
         p_user = piece_user_subs[p]
-        
         slot_options = []
         p_lvl_opt = []
         for slot_idx in range(4):
@@ -189,8 +185,7 @@ def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, 
             if user_sel != "อัตโนมัติ":
                 slot_options.append([user_sel])
             else:
-                opts = [k for k in cand_keys if not (exclude_main and k == p_main)]
-                opts.append(None)
+                opts = list(cand_keys) + [None]
                 slot_options.append(opts)
             p_lvl_opt.append(user_lvl)
         piece_cands.append(slot_options)
@@ -202,73 +197,58 @@ def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, 
         for combo in itertools.product(*piece_cands[p]):
             non_none = [x for x in combo if x is not None]
             if len(non_none) == len(set(non_none)):
-                valid_configs.append(combo)
+                # Normalization เพื่อตัดตำแหน่งสลับช่องหลอกล่วงหน้า
+                sorted_non_none = tuple(sorted(non_none))
+                if sorted_non_none not in valid_configs:
+                    valid_configs.append(sorted_non_none)
         if not valid_configs:
-            valid_configs = [(None, None, None, None)]
+            valid_configs = [()]
         valid_piece_configs.append(valid_configs)
 
-    best_cand = None
-    best_priority_score = None
+    all_generated_cands = []
+    seen_signatures = set()
 
-    for p0 in valid_piece_configs[0][:3]:
-        for p1 in valid_piece_configs[1][:3]:
-            for p2 in valid_piece_configs[2][:3]:
-                for p3 in valid_piece_configs[3][:3]:
-                    combo = [p0, p1, p2, p3]
-                    
-                    invalid_combo = False
-                    temp_acc = F.copy()
-                    for p in range(4):
-                        for sub_stat in combo[p]:
-                            if sub_stat:
-                                temp_acc[KIDX[sub_stat]] += subs[sub_stat][0]
-                                if sub_stat in CAPPED_STATS:
-                                    curr_val = compute_totals(temp_acc[np.newaxis, :], base, [sub_stat])[0][0]
-                                    if curr_val > 100.0 + 1e-6:
-                                        invalid_combo = True
-                                        break
-                        if invalid_combo:
-                            break
-                    
-                    if invalid_combo:
-                        continue
+    for p0 in valid_piece_configs[0]:
+        for p1 in valid_piece_configs[1]:
+            for p2 in valid_piece_configs[2]:
+                for p3 in valid_piece_configs[3]:
+                    norm_combo = [
+                        p0 + (None,) * (4 - len(p0)),
+                        p1 + (None,) * (4 - len(p1)),
+                        p2 + (None,) * (4 - len(p2)),
+                        p3 + (None,) * (4 - len(p3)),
+                    ]
 
                     acc = F.copy()
                     for p in range(4):
-                        for sub_stat in combo[p]:
+                        for sub_stat in norm_combo[p]:
                             if sub_stat:
                                 acc[KIDX[sub_stat]] += subs[sub_stat][0]
 
                     levels_matrix = []
-                    
                     for p in range(4):
                         p_levels = [0, 0, 0, 0]
                         rem_budget = 5
-                        
-                        for s_idx, sub_stat in enumerate(combo[p]):
+                        for s_idx, sub_stat in enumerate(norm_combo[p]):
                             if sub_stat:
-                                user_defined_lvl = fixed_levels[p][s_idx]
-                                
+                                user_defined_lvl = fixed_levels[p][s_idx] if s_idx < len(fixed_levels[p]) else "อัตโนมัติ"
                                 if user_defined_lvl != "อัตโนมัติ":
                                     forced_l = int(user_defined_lvl.replace("+", ""))
                                     p_levels[s_idx] = forced_l
                                     added_val = subs[sub_stat][forced_l] - subs[sub_stat][0]
                                     acc[KIDX[sub_stat]] += added_val
                                     continue
-                                
+
                                 if rem_budget > 0:
                                     current_tot = compute_totals(acc[np.newaxis, :], base, [sub_stat])[0][0]
-                                    
                                     if sub_stat in CAPPED_STATS and current_tot >= 99.0 - 1e-6:
                                         p_levels[s_idx] = 0
                                         continue
 
                                     max_allowed = min(rem_budget, max_level_per_stat)
                                     best_l = 0
-                                    
                                     for l in range(1, max_allowed + 1):
                                         added_val = subs[sub_stat][l] - subs[sub_stat][0]
-                                        
                                         if sub_stat in CAPPED_STATS:
                                             if current_tot + added_val > 100.0 + 1e-6:
                                                 break
@@ -283,11 +263,16 @@ def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, 
                                     if best_l > 0:
                                         added_val = subs[sub_stat][best_l] - subs[sub_stat][0]
                                         acc[KIDX[sub_stat]] += added_val
-                                
+
                         levels_matrix.append(p_levels)
-                    
+
+                    sig_pieces = tuple((norm_combo[p], tuple(levels_matrix[p])) for p in range(4))
+                    full_sig = (set_name, tuple(mains), sig_pieces)
+                    if full_sig in seen_signatures:
+                        continue
+                    seen_signatures.add(full_sig)
+
                     tot_res = compute_totals(acc[np.newaxis, :], base, ordered_stats)[0]
-                    
                     shortfalls = []
                     for idx, s in enumerate(ordered_stats):
                         req = target_dict[s]
@@ -298,29 +283,24 @@ def search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, 
                             diff = max(0.0, req - curr)
                         shortfalls.append(diff)
 
-                    priority_score = tuple(shortfalls) + (sum(sum(l) for l in levels_matrix),)
+                    all_generated_cands.append({
+                        "set": set_name,
+                        "F": F,
+                        "mains": mains,
+                        "subs": norm_combo,
+                        "levels": levels_matrix,
+                        "feasible": all(s <= 1e-6 for s in shortfalls),
+                        "shortfalls": shortfalls,
+                        "minsum": sum(sum(l) for l in levels_matrix)
+                    })
 
-                    if best_priority_score is None or priority_score < best_priority_score:
-                        best_priority_score = priority_score
-                        best_cand = {
-                            "set": set_name,
-                            "F": F,
-                            "mains": mains,
-                            "subs": combo,
-                            "levels": levels_matrix,
-                            "feasible": all(s <= 1e-6 for s in shortfalls),
-                            "shortfalls": shortfalls,
-                            "minsum": sum(sum(l) for l in levels_matrix)
-                        }
-
-    return [best_cand] if best_cand else []
+    return all_generated_cands
 
 
-def run_engine(char, set_names, sets, main_selections, gear, buffs, target_list, unwanted, exclude_main,
+def run_engine(char, set_names, sets, main_selections, gear, buffs, target_list, unwanted,
                priority, subs, piece_user_subs):
     base = char["base"]
     targets = {t["stat"]: t["value"] for t in target_list}
-    
     relevant = set()
     for s in targets:
         relevant.add(s)
@@ -342,11 +322,11 @@ def run_engine(char, set_names, sets, main_selections, gear, buffs, target_list,
     for sn in set_names:
         for mains in itertools.product(*possible_mains):
             F = build_fixed(char, sets[sn], mains, buffs)
-            cands = search_piece_substats(F, base, target_list, cand_keys, mains, exclude_main, priority, subs, sn, piece_user_subs)
+            cands = search_piece_substats(F, base, target_list, cand_keys, mains, priority, subs, sn, piece_user_subs)
             all_c.extend(cands)
 
     all_c.sort(key=lambda c: (not c["feasible"], c["shortfalls"], c["minsum"], c["set"]))
-    return all_c[:8], cand_keys
+    return all_c[:15], cand_keys  # จำกัดคืนเฉพาะ 15 ตัวเลือกแรกที่เหมาะสมที่สุดเพื่อความรวดเร็วในการแสดงผล
 
 
 # ─────────────────────────────────────────────────────────────
@@ -402,45 +382,37 @@ with st.sidebar:
         "ลำดับความสำคัญในการเลือกแผน",
         ["robust", "minsum"],
         format_func=lambda x: {"robust": "ทนต่อการสุ่มได้ระดับต่ำ (แนะนำ)",
-                               "minsum": "ใช้ระดับการบวกรวมน้อยที่สุด (Max +3, ไม่เกิน +5/ชิ้น)"}[x],
+                               "minsum": "ใช้ระดับการบวกรวมน้อยที่สุด (Max +3)"}[x],
     )
-    exclude_main = st.checkbox("ออฟรองห้ามซ้ำกับออฟหลักของชิ้นเดียวกัน", value=True)
 
-# ── 1. ตัวละคร ─────────────────────────────────────────────
 st.subheader("1) เลือกตัวละคร")
 elements = sorted({c["element"] for c in CHARS})
-sel_el = st.multiselect("กรองตามธาตุ (ไม่เลือก = แสดงทั้งหมด)", elements)
+sel_el = st.multiselect("กรองตามธาตุ", elements)
 pool = [c for c in CHARS if not sel_el or c["element"] in sel_el]
 if not pool:
     st.warning("ไม่มีตัวละครในธาตุที่เลือก")
     st.stop()
 char = st.selectbox("ตัวละคร", pool, format_func=lambda c: f"{c['name']}  ·  {c['element']}  ·  {c['rank']}")
 
-# ── 2. เซต ────────────────────────────────────────────────
 st.subheader("2) เลือกเซตอุปกรณ์")
 set_choice = st.selectbox("เซต", [AUTO_SET] + list(SETS.keys()))
 
-# ── 3. ออฟหลัก ─────────────────────────────────────────────
-st.subheader("3) เลือกออฟหลัก (สามารถเลือกเป็นอัตโนมัติได้)")
+st.subheader("3) เลือกออฟหลัก")
 cw, ca = st.columns(2)
 main_opts_w = [AUTO_MAIN] + list(GEAR[WEAPON])
 main_opts_a = [AUTO_MAIN] + list(GEAR[ARMOR])
-
 main_fmt = lambda slot: (lambda k: AUTO_MAIN if k == AUTO_MAIN else f"{k} (+{GEAR[slot][k]:g}{'' if k == 'Speed' else '%'})")
 
 with cw:
-    st.markdown("**อาวุธ**")
-    w1 = st.selectbox("อาวุธ ช่องที่ 1", main_opts_w, key="w1", format_func=main_fmt(WEAPON))
-    w2 = st.selectbox("อาวุธ ช่องที่ 2", main_opts_w, key="w2", format_func=main_fmt(WEAPON))
+    w1 = st.selectbox("อาวุธ 1", main_opts_w, key="w1", format_func=main_fmt(WEAPON))
+    w2 = st.selectbox("อาวุธ 2", main_opts_w, key="w2", format_func=main_fmt(WEAPON))
 with ca:
-    st.markdown("**เกราะ**")
-    a1 = st.selectbox("เกราะ ช่องที่ 1", main_opts_a, key="a1", format_func=main_fmt(ARMOR))
-    a2 = st.selectbox("เกราะ ช่องที่ 2", main_opts_a, key="a2", format_func=main_fmt(ARMOR))
+    a1 = st.selectbox("เกราะ 1", main_opts_a, key="a1", format_func=main_fmt(ARMOR))
+    a2 = st.selectbox("เกราะ 2", main_opts_a, key="a2", format_func=main_fmt(ARMOR))
 
 MAIN_SELECTIONS = [w1, w2, a1, a2]
 PIECE_NAMES = ["อาวุธ 1", "อาวุธ 2", "เกราะ 1", "เกราะ 2"]
 
-# ── 4. ออฟรอง (คงรายการ Options เพื่อไม่ให้รีเซ็ต + ตรวจจับการซ้ำ) ───
 st.subheader("4) เลือกออฟรอง และ ระดับการตีบวก (+0 ถึง +5)")
 sub_choices = ["อัตโนมัติ"] + list(SUBS.keys())
 level_choices = ["อัตโนมัติ", "+0", "+1", "+2", "+3", "+4", "+5"]
@@ -458,53 +430,33 @@ for idx, tab in enumerate(tabs):
         for s_idx in range(4):
             with cols[s_idx]:
                 st.markdown(f"**ออฟรองช่องที่ {s_idx+1}**")
-                
-                sub_sel = st.selectbox(
-                    "ชนิดออฟรอง", 
-                    sub_choices, 
-                    key=f"sub_{idx}_{s_idx}", 
-                    format_func=lambda k: "อัตโนมัติ" if k == "อัตโนมัติ" else SUB_RAW.get(k, k)
-                )
-                
-                lvl_sel = st.selectbox(
-                    "ระดับขั้นตีบวก",
-                    level_choices,
-                    key=f"lvl_{idx}_{s_idx}"
-                )
+                sub_sel = st.selectbox("ชนิดออฟรอง", sub_choices, key=f"sub_{idx}_{s_idx}", format_func=lambda k: "อัตโนมัติ" if k == "อัตโนมัติ" else SUB_RAW.get(k, k))
+                lvl_sel = st.selectbox("ระดับขั้นตีบวก", level_choices, key=f"lvl_{idx}_{s_idx}")
                 p_subs.append((sub_sel, lvl_sel))
-                
                 if sub_sel != "อัตโนมัติ":
                     selected_in_piece.append(sub_sel)
 
-        # เช็คว่ามีค่าซ้ำกันในชิ้นเดียวกันหรือไม่
         if len(selected_in_piece) != len(set(selected_in_piece)):
             dup_error_pieces.append(PIECE_NAMES[idx])
             st.error(f"⚠️ ใน **{PIECE_NAMES[idx]}** คุณเลือกออฟรองประเภทเดียวกันซ้ำกัน! กรุณาเลือกออฟรองแต่ละช่องไม่ให้ซ้ำกัน")
 
         piece_user_subs.append(p_subs)
 
-# ── 5. บัฟ ────────────────────────────────────────────────
 st.subheader("5) บัฟเสริม")
-dynamic_input("buffs", list(BUFF_CHOICES.values()), True,
-              fmt_option=lambda c: next((k for k, v in BUFF_CHOICES.items() if v == c), c),
-              unit_of=lambda s: "" if s in FLAT_STATS else "%")
+dynamic_input("buffs", list(BUFF_CHOICES.values()), True, fmt_option=lambda c: next((k for k, v in BUFF_CHOICES.items() if v == c), c), unit_of=lambda s: "" if s in FLAT_STATS else "%")
 
-# ── 6. Target ─────────────────────────────────────────────
-st.subheader("6) สเตตัสเป้าหมาย (Target Stats)")
-st.caption("เรียงลำดับความสำคัญตามการกดเพิ่ม (รายการแรกสุด = ความสำคัญอันดับ 1)")
+st.subheader("6) สเตตัสเป้าหมาย")
 dynamic_input("targets", ALL_STATS, True, unit_of=lambda s: "" if s in FLAT_STATS + ["Speed"] else "%")
 
-# ── 7. Unwanted ───────────────────────────────────────────
-st.subheader("7) สเตตัสที่ไม่ต้องการ (Unwanted)")
+st.subheader("7) สเตตัสที่ไม่ต้องการ")
 dynamic_input("unwanted", list(SUBS), False, fmt_option=lambda k: SUB_RAW.get(k, k))
 
-# ── Run ──────────────────────────────────────────────────
 st.divider()
 
 if dup_error_pieces:
-    st.warning(f"⛔ ไม่สามารถคำนวณได้เนื่องจากมีการเลือกออฟรองซ้ำกันใน {', '.join(dup_error_pieces)} (ออฟรองแต่ละช่องของชิ้นเดียวกันต้องไม่ซ้ำกัน)")
+    st.warning(f"⛔ ไม่สามารถคำนวณได้เนื่องจากมีการเลือกออฟรองซ้ำกันใน {', '.join(dup_error_pieces)}")
 
-if st.button("🔍 คำนวณรูปแบบออฟรอง", type="primary", width="stretch", disabled=bool(dup_error_pieces)):
+if st.button("🔍 คำนวณรูปแบบออฟรองที่ดีที่สุด", type="primary", width="stretch", disabled=bool(dup_error_pieces)):
     target_list = st.session_state["targets"]
     if not target_list:
         st.session_state.pop("result", None)
@@ -512,9 +464,9 @@ if st.button("🔍 คำนวณรูปแบบออฟรอง", type="p
     else:
         unw = {r["stat"] for r in st.session_state["unwanted"]}
         names = list(SETS) if set_choice == AUTO_SET else [set_choice]
-        with st.spinner("กำลังคำนวณ..."):
+        with st.spinner("กำลังคำนวณแบบรวดเร็ว..."):
             cands, cand_keys = run_engine(char, names, SETS, MAIN_SELECTIONS, GEAR, st.session_state["buffs"],
-                                          target_list, unw, exclude_main, priority, SUBS, piece_user_subs)
+                                          target_list, unw, priority, SUBS, piece_user_subs)
         st.session_state["result"] = {
             "cands": cands, "target_list": target_list, "unwanted": unw, "cand_keys": cand_keys,
             "char": char, "auto": set_choice == AUTO_SET,
@@ -528,20 +480,22 @@ if res:
     if not cands:
         st.error("ไม่พบคอมบิเนชันที่เหมาะสม กรุณาปรับเงื่อนไขเป้าหมายหรือการเลือกออฟหลัก/รอง")
     else:
-        pick = st.selectbox("ดูรายละเอียดของตัวเลือก", range(len(cands)),
-                            format_func=lambda i: f"อันดับ {i + 1}: {cands[i]['set']}")
+        pick = st.selectbox(
+            "เลือกดูอันดับของตัวเลือกที่แนะนำ",
+            range(len(cands)),
+            format_func=lambda i: f"อันดับ {i + 1}: {cands[i]['set']} ({'✅ บรรลุเป้าหมาย' if cands[i]['feasible'] else '❌ ไม่ถึงเป้าหมาย'})"
+        )
         c = cands[pick]
 
-        # ตารางแสดงการกระจายออฟรอง
+        # 1. ตารางแสดงการกระจายออฟรอง
         st.subheader("การกระจายออฟรองแต่ละชิ้น")
         prow = []
         for p, n in enumerate(PIECE_NAMES):
             mk, mv = c["mains"][p]
             r = {
-                "ชิ้น": n, 
+                "ชิ้น": n,
                 "ออฟหลัก": f"{mk} +{mv:g}%" if mk in GEAR[ARMOR] or mk in GEAR[WEAPON] else f"{mk}"
             }
-            
             for s_idx in range(4):
                 sub_stat = c["subs"][p][s_idx]
                 sub_lv = c["levels"][p][s_idx]
@@ -551,12 +505,11 @@ if res:
                     r[f"ออฟรอง {s_idx+1}"] = f"{SUB_RAW.get(sub_stat, sub_stat)} {val_str} (+{sub_lv})"
                 else:
                     r[f"ออฟรอง {s_idx+1}"] = "-"
-
             prow.append(r)
-        
+
         st.dataframe(pd.DataFrame(prow), hide_index=True, width="stretch")
 
-        # ตารางสเตตัสทั้งหมดของตัวละคร
+        # 2. ตารางสเตตัสทั้งหมดของตัวละคร (Base ➔ Final)
         st.subheader("📊 ตารางสเตตัสทั้งหมดของตัวละคร (สเตตัสเดิม ➔ สเตตัสใหม่)")
         
         base_pure_acc = np.zeros(K)
